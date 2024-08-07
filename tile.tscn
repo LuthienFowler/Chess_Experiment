@@ -7,3 +7,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.219608, 0.054902, 0.00784314, 1)
 script = ExtResource("1_rg84x")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
