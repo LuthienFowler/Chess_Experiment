@@ -5,7 +5,8 @@
 [node name="Main" type="Node2D"]
 
 [node name="Board" type="Node2D" parent="."]
-position = Vector2(109, 58)
+position = Vector2(335, 76)
+scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
 [node name="Row1" type="Node2D" parent="Board"]
