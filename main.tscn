@@ -118,3 +118,45 @@ offset_top = 289.0
 offset_right = 92.0
 offset_bottom = 329.0
 color = Color(0.949823, 0.395207, 0.206917, 1)
+
+[node name="Tile17" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 92.0
+offset_top = 289.0
+offset_right = 132.0
+offset_bottom = 329.0
+dark = true
+
+[node name="Tile18" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 132.0
+offset_top = 289.0
+offset_right = 172.0
+offset_bottom = 329.0
+color = Color(0.89074, 0.345333, 0.152792, 1)
+
+[node name="Tile19" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 172.0
+offset_top = 289.0
+offset_right = 212.0
+offset_bottom = 329.0
+dark = true
+
+[node name="Tile20" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 212.0
+offset_top = 289.0
+offset_right = 252.0
+offset_bottom = 329.0
+color = Color(0.952055, 0.402057, 0.216608, 1)
+
+[node name="Tile21" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 252.0
+offset_top = 289.0
+offset_right = 292.0
+offset_bottom = 329.0
+color = Color(0.20494, 0.0490369, 0.006879, 1)
+dark = true
+
+[node name="Tile22" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 292.0
+offset_top = 289.0
+offset_right = 332.0
+offset_bottom = 329.0
