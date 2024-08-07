@@ -9,7 +9,7 @@ extends ColorRect
 func _ready():
 	color_tile()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Functions #######################################################################################
