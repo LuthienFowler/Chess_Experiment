@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c411d8anlrh0m"]
+
+[ext_resource type="Script" path="res://Tile.gd" id="1_rg84x"]
+
+[node name="Tile" type="ColorRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rg84x")
