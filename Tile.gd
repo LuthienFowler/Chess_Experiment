@@ -3,7 +3,7 @@ extends ColorRect
 ## Variables #######################################################################################
 
 @export var dark = false
-@export var location = " "
+@onready var location = get_name()
 
 ## Default functions ###############################################################################
 

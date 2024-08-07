@@ -10,59 +10,56 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Row1" type="Node2D" parent="Board"]
 
-[node name="Tile" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="a8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 9.0
 offset_right = 52.0
 offset_bottom = 49.0
 color = Color(0.857257, 0.324884, 0.134162, 1)
-location = " a8"
 
-[node name="Tile2" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="b8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 9.0
 offset_right = 92.0
 offset_bottom = 49.0
 dark = true
-location = " b8"
 
-[node name="Tile3" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="c8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 9.0
 offset_right = 132.0
 offset_bottom = 49.0
 color = Color(0.965408, 0.45035, 0.282285, 1)
-location = " c8"
 
-[node name="Tile4" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="d8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 9.0
 offset_right = 172.0
 offset_bottom = 49.0
 dark = true
 
-[node name="Tile5" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="e8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 9.0
 offset_right = 212.0
 offset_bottom = 49.0
 color = Color(0.879738, 0.338308, 0.146181, 1)
 
-[node name="Tile6" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="f8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 9.0
 offset_right = 252.0
 offset_bottom = 49.0
 dark = true
 
-[node name="Tile7" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="g8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 9.0
 offset_right = 292.0
 offset_bottom = 49.0
 color = Color(0.912162, 0.360097, 0.167347, 1)
 
-[node name="Tile8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
+[node name="h8" parent="Board/Row1" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 9.0
 offset_right = 332.0
@@ -71,59 +68,56 @@ dark = true
 
 [node name="Row2" type="Node2D" parent="Board"]
 
-[node name="Tile9" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="a7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 49.0
 offset_right = 52.0
 offset_bottom = 89.0
 dark = true
-location = " a7"
 
-[node name="Tile" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="b7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 49.0
 offset_right = 92.0
 offset_bottom = 89.0
 color = Color(0.862931, 0.328167, 0.137025, 1)
-location = " b7"
 
-[node name="Tile2" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="c7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 49.0
 offset_right = 132.0
 offset_bottom = 89.0
 dark = true
-location = " c7"
 
-[node name="Tile3" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="d7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 49.0
 offset_right = 172.0
 offset_bottom = 89.0
 color = Color(0.868571, 0.331498, 0.13998, 1)
 
-[node name="Tile4" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="e7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 49.0
 offset_right = 212.0
 offset_bottom = 89.0
 dark = true
 
-[node name="Tile5" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="f7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 49.0
 offset_right = 252.0
 offset_bottom = 89.0
 color = Color(0.810883, 0.300081, 0.114209, 1)
 
-[node name="Tile6" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="g7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 49.0
 offset_right = 292.0
 offset_bottom = 89.0
 dark = true
 
-[node name="Tile23" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
+[node name="h7" parent="Board/Row2" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 49.0
 offset_right = 332.0
@@ -132,59 +126,56 @@ color = Color(0.961989, 0.436506, 0.263808, 1)
 
 [node name="Row3" type="Node2D" parent="Board"]
 
-[node name="Tile10" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="a6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 89.0
 offset_right = 52.0
 offset_bottom = 129.0
 color = Color(0.954204, 0.408922, 0.226199, 1)
-location = "a6"
 
-[node name="Tile" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="b6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 89.0
 offset_right = 92.0
 offset_bottom = 129.0
 dark = true
-location = " b6"
 
-[node name="Tile2" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="c6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 89.0
 offset_right = 132.0
 offset_bottom = 129.0
 color = Color(0.857257, 0.324884, 0.134162, 1)
-location = " c6"
 
-[node name="Tile3" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="d6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 89.0
 offset_right = 172.0
 offset_bottom = 129.0
 dark = true
 
-[node name="Tile4" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="e6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 89.0
 offset_right = 212.0
 offset_bottom = 129.0
 color = Color(0.971358, 0.478069, 0.318794, 1)
 
-[node name="Tile5" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="f6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 89.0
 offset_right = 252.0
 offset_bottom = 129.0
 dark = true
 
-[node name="Tile6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="g6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 89.0
 offset_right = 292.0
 offset_bottom = 129.0
 color = Color(0.961989, 0.436506, 0.263808, 1)
 
-[node name="Tile24" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
+[node name="h6" parent="Board/Row3" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 89.0
 offset_right = 332.0
@@ -193,59 +184,56 @@ dark = true
 
 [node name="Row4" type="Node2D" parent="Board"]
 
-[node name="Tile11" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="a5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 129.0
 offset_right = 52.0
 offset_bottom = 169.0
 dark = true
-location = " a5"
 
-[node name="Tile" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="b5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 129.0
 offset_right = 92.0
 offset_bottom = 169.0
 color = Color(0.922537, 0.367872, 0.175338, 1)
-location = " b5"
 
-[node name="Tile2" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="c5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 129.0
 offset_right = 132.0
 offset_bottom = 169.0
 dark = true
-location = " c5"
 
-[node name="Tile3" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="d5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 129.0
 offset_right = 172.0
 offset_bottom = 169.0
 color = Color(0.763368, 0.277272, 0.0983933, 1)
 
-[node name="Tile4" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="e5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 129.0
 offset_right = 212.0
 offset_bottom = 169.0
 dark = true
 
-[node name="Tile5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="f5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 129.0
 offset_right = 252.0
 offset_bottom = 169.0
 color = Color(0.757383, 0.274526, 0.0966383, 1)
 
-[node name="Tile6" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="g5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 129.0
 offset_right = 292.0
 offset_bottom = 169.0
 dark = true
 
-[node name="Tile25" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
+[node name="h5" parent="Board/Row4" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 129.0
 offset_right = 332.0
@@ -254,59 +242,56 @@ color = Color(0.956271, 0.415801, 0.235703, 1)
 
 [node name="Row5" type="Node2D" parent="Board"]
 
-[node name="Tile12" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="a4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 169.0
 offset_right = 52.0
 offset_bottom = 209.0
 color = Color(0.993414, 0.760391, 0.68613, 1)
-location = " a4"
 
-[node name="Tile" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="b4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 169.0
 offset_right = 92.0
 offset_bottom = 209.0
 dark = true
-location = " b4"
 
-[node name="Tile2" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="c4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 169.0
 offset_right = 132.0
 offset_bottom = 209.0
 color = Color(0.799082, 0.294221, 0.109924, 1)
-location = " c4"
 
-[node name="Tile3" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="d4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 169.0
 offset_right = 172.0
 offset_bottom = 209.0
 dark = true
 
-[node name="Tile4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="e4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 169.0
 offset_right = 212.0
 offset_bottom = 209.0
 color = Color(0.879738, 0.338308, 0.146181, 1)
 
-[node name="Tile5" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="f4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 169.0
 offset_right = 252.0
 offset_bottom = 209.0
 dark = true
 
-[node name="Tile6" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="g4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 169.0
 offset_right = 292.0
 offset_bottom = 209.0
 color = Color(0.958257, 0.422693, 0.245134, 1)
 
-[node name="Tile26" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="e5" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 169.0
 offset_right = 332.0
@@ -315,59 +300,56 @@ dark = true
 
 [node name="Row6" type="Node2D" parent="Board"]
 
-[node name="Tile13" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="a3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 209.0
 offset_right = 52.0
 offset_bottom = 249.0
 dark = true
-location = " a3"
 
-[node name="Tile" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="b3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 209.0
 offset_right = 92.0
 offset_bottom = 249.0
 color = Color(0.91738, 0.36395, 0.171281, 1)
-location = " b3"
 
-[node name="Tile2" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="c3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 209.0
 offset_right = 132.0
 offset_bottom = 249.0
 dark = true
-location = " c3"
 
-[node name="Tile3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="d3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 209.0
 offset_right = 172.0
 offset_bottom = 249.0
 color = Color(0.781274, 0.285638, 0.10393, 1)
 
-[node name="Tile4" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="e3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 209.0
 offset_right = 212.0
 offset_bottom = 249.0
 dark = true
 
-[node name="Tile5" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="f3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 209.0
 offset_right = 252.0
 offset_bottom = 249.0
 color = Color(0.781274, 0.285638, 0.10393, 1)
 
-[node name="Tile6" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="g3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 209.0
 offset_right = 292.0
 offset_bottom = 249.0
 dark = true
 
-[node name="Tile27" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
+[node name="h3" parent="Board/Row6" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 209.0
 offset_right = 332.0
@@ -376,59 +358,56 @@ color = Color(0.857257, 0.324884, 0.134162, 1)
 
 [node name="Row7" type="Node2D" parent="Board"]
 
-[node name="Tile14" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="a2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 12.0
 offset_top = 249.0
 offset_right = 52.0
 offset_bottom = 289.0
 color = Color(0.97622, 0.505742, 0.354852, 1)
-location = " a2"
 
-[node name="Tile" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="b2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 52.0
 offset_top = 249.0
 offset_right = 92.0
 offset_bottom = 289.0
 dark = true
-location = " b2"
 
-[node name="Tile2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="c2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 92.0
 offset_top = 249.0
 offset_right = 132.0
 offset_bottom = 289.0
 color = Color(0.80499, 0.297136, 0.112036, 1)
-location = " c2"
 
-[node name="Tile3" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="d2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 132.0
 offset_top = 249.0
 offset_right = 172.0
 offset_bottom = 289.0
 dark = true
 
-[node name="Tile4" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="e2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 172.0
 offset_top = 249.0
 offset_right = 212.0
 offset_bottom = 289.0
 color = Color(0.971358, 0.478069, 0.318794, 1)
 
-[node name="Tile5" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="f2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 212.0
 offset_top = 249.0
 offset_right = 252.0
 offset_bottom = 289.0
 dark = true
 
-[node name="Tile6" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="g2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 252.0
 offset_top = 249.0
 offset_right = 292.0
 offset_bottom = 289.0
 color = Color(0.975099, 0.498834, 0.345874, 1)
 
-[node name="Tile28" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
+[node name="h2" parent="Board/Row7" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 249.0
 offset_right = 332.0
@@ -437,68 +416,61 @@ dark = true
 
 [node name="Row8" type="Node2D" parent="Board"]
 position = Vector2(-109, -58)
+metadata/_edit_group_ = true
 
-[node name="Tile15" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="a1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 121.0
 offset_top = 347.0
 offset_right = 161.0
 offset_bottom = 387.0
 dark = true
-location = " a1"
 
-[node name="Tile16" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="b1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 161.0
 offset_top = 347.0
 offset_right = 201.0
 offset_bottom = 387.0
 color = Color(0.949823, 0.395207, 0.206917, 1)
-location = " b1"
 
-[node name="Tile17" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="c1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 201.0
 offset_top = 347.0
 offset_right = 241.0
 offset_bottom = 387.0
 dark = true
-location = " c1"
 
-[node name="Tile18" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="d1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 241.0
 offset_top = 347.0
 offset_right = 281.0
 offset_bottom = 387.0
 color = Color(0.89074, 0.345333, 0.152792, 1)
-location = " d1"
 
-[node name="Tile19" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="e1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 281.0
 offset_top = 347.0
 offset_right = 321.0
 offset_bottom = 387.0
 dark = true
-location = " e1"
 
-[node name="Tile20" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="f1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 321.0
 offset_top = 347.0
 offset_right = 361.0
 offset_bottom = 387.0
 color = Color(0.952055, 0.402057, 0.216608, 1)
-location = " f1"
 
-[node name="Tile21" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="g1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 361.0
 offset_top = 347.0
 offset_right = 401.0
 offset_bottom = 387.0
 color = Color(0.20494, 0.0490369, 0.006879, 1)
 dark = true
-location = " g1"
 
-[node name="Tile22" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
+[node name="h1" parent="Board/Row8" instance=ExtResource("1_a0bsv")]
 offset_left = 401.0
 offset_top = 347.0
 offset_right = 441.0
 offset_bottom = 387.0
 color = Color(0.775315, 0.282827, 0.102037, 1)
-location = " h1"
