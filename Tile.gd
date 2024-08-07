@@ -6,16 +6,18 @@ extends ColorRect
 
 ## Default functions ###############################################################################
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	color_tile()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+## Functions #######################################################################################
 
 func color_tile():
 	if dark:
-		pass
+		color = Color("380e02")
+		print("The tile has been colored a dark color")
+	else:
+		color = Color("eda64a")
+		print("The tile has been colored a light color")
