@@ -1,3 +1,64 @@
-[gd_scene format=3 uid="uid://cst0jdmtxvn10"]
+[gd_scene load_steps=2 format=3 uid="uid://cst0jdmtxvn10"]
+
+[ext_resource type="PackedScene" uid="uid://c411d8anlrh0m" path="res://tile.tscn" id="1_a0bsv"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Board" type="Node2D" parent="."]
+position = Vector2(109, 58)
+
+[node name="Tile" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 52.0
+offset_bottom = 49.0
+color = Color(0.857257, 0.324884, 0.134162, 1)
+
+[node name="Tile2" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 52.0
+offset_top = 9.0
+offset_right = 92.0
+offset_bottom = 49.0
+dark = true
+
+[node name="Tile3" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 92.0
+offset_top = 9.0
+offset_right = 132.0
+offset_bottom = 49.0
+color = Color(0.965408, 0.45035, 0.282285, 1)
+
+[node name="Tile4" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 132.0
+offset_top = 9.0
+offset_right = 172.0
+offset_bottom = 49.0
+dark = true
+
+[node name="Tile5" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 172.0
+offset_top = 9.0
+offset_right = 212.0
+offset_bottom = 49.0
+color = Color(0.879738, 0.338308, 0.146181, 1)
+
+[node name="Tile6" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 212.0
+offset_top = 9.0
+offset_right = 252.0
+offset_bottom = 49.0
+dark = true
+
+[node name="Tile7" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 252.0
+offset_top = 9.0
+offset_right = 292.0
+offset_bottom = 49.0
+color = Color(0.912162, 0.360097, 0.167347, 1)
+
+[node name="Tile8" parent="Board" instance=ExtResource("1_a0bsv")]
+offset_left = 292.0
+offset_top = 9.0
+offset_right = 332.0
+offset_bottom = 49.0
+dark = true
