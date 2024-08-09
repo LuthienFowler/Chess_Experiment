@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cst0jdmtxvn10"]
+[gd_scene load_steps=3 format=3 uid="uid://cst0jdmtxvn10"]
 
 [ext_resource type="PackedScene" uid="uid://c411d8anlrh0m" path="res://tile.tscn" id="1_a0bsv"]
+[ext_resource type="PackedScene" uid="uid://c33i8qi7ko0ly" path="res://chess_piece.tscn" id="2_gta7v"]
 
 [node name="Main" type="Node2D"]
 
@@ -493,3 +494,141 @@ color = Color(0.775315, 0.282827, 0.102037, 1)
 visible = false
 position = Vector2(576, 321)
 zoom = Vector2(1.5, 1.5)
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="Black" type="Node2D" parent="Pieces"]
+position = Vector2(590, 334)
+metadata/_edit_group_ = true
+
+[node name="Queen" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-24, -216)
+piece_type = 1
+
+[node name="King" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(32, -216)
+piece_type = 0
+
+[node name="Bishop1" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(93, -215)
+piece_type = 3
+
+[node name="Bishop2" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-87, -218)
+piece_type = 3
+
+[node name="Knight1" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(150, -214)
+piece_type = 4
+
+[node name="Knight2" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-147, -216)
+piece_type = 4
+
+[node name="Rook1" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(216, -217)
+piece_type = 2
+
+[node name="Rook2" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-210, -212)
+piece_type = 2
+
+[node name="Pawn1" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(211, -154)
+
+[node name="Pawn2" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(151, -156)
+
+[node name="Pawn3" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(90, -155)
+
+[node name="Pawn4" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(33, -154)
+
+[node name="Pawn5" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-28, -152)
+
+[node name="Pawn6" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-87, -154)
+
+[node name="Pawn8" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-147, -152)
+
+[node name="Pawn9" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+position = Vector2(-206, -152)
+
+[node name="White" type="Node2D" parent="Pieces"]
+position = Vector2(591, 330)
+metadata/_edit_group_ = true
+
+[node name="Queen" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-28, 211)
+piece_type = 1
+piece_color = 1
+
+[node name="King" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(33, 210)
+piece_type = 0
+piece_color = 1
+
+[node name="Bishop1" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(91, 210)
+piece_type = 3
+piece_color = 1
+
+[node name="Bishop2" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-89, 211)
+piece_type = 3
+piece_color = 1
+
+[node name="Knight1" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(151, 209)
+piece_type = 4
+piece_color = 1
+
+[node name="Knight2" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-148, 210)
+piece_type = 4
+piece_color = 1
+
+[node name="Rook1" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(211, 209)
+piece_type = 2
+piece_color = 1
+
+[node name="Rook2" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-209, 210)
+piece_type = 2
+piece_color = 1
+
+[node name="Pawn1" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(213, 149)
+piece_color = 1
+
+[node name="Pawn2" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(151, 149)
+piece_color = 1
+
+[node name="Pawn3" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(91, 147)
+piece_color = 1
+
+[node name="Pawn4" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(33, 148)
+piece_color = 1
+
+[node name="Pawn5" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-28, 149)
+piece_color = 1
+
+[node name="Pawn6" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-89, 147)
+piece_color = 1
+
+[node name="Pawn8" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-147, 149)
+piece_color = 1
+
+[node name="Pawn9" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+position = Vector2(-209, 146)
+piece_color = 1
