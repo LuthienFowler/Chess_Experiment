@@ -25,4 +25,4 @@ func color_tile():
 
 
 func _on_button_pressed():
-	print(location + " has been pressed!")
+	pass
