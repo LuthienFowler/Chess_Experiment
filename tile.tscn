@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c411d8anlrh0m"]
+[gd_scene load_steps=3 format=3 uid="uid://c411d8anlrh0m"]
 
 [ext_resource type="Script" path="res://Tile.gd" id="1_rg84x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkivi"]
+size = Vector2(40, 40)
 
 [node name="Tile" type="ColorRect"]
 offset_right = 40.0
@@ -14,5 +17,11 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_nkivi")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

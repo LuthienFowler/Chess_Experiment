@@ -4,11 +4,13 @@ extends ColorRect
 
 @export var dark = false
 @onready var location = get_name()
+var area
 
 ## Default functions ###############################################################################
 
 func _ready():
 	color_tile()
+	$Area2D.name = location
 
 func _process(_delta):
 	pass

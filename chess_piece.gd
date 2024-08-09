@@ -11,6 +11,10 @@ enum color {BLACK, WHITE}
 @onready var color_rect = $ColorRect
 @onready var label = $Label
 
+var count = 0
+
+var location
+
 ## Default functions ###############################################################################
 
 func _ready():
@@ -40,3 +44,26 @@ func _process(_delta):
 
 
 ## Functions #######################################################################################
+
+
+## Signal functions ################################################################################
+
+func _on_area_2d_area_entered(area):
+	location = area.get_name()
+	
+	if count < 1:
+		match piece_type:
+			piece.KING:
+				print("King " + location)
+			piece.QUEEN:
+				print("Queen " + location)
+			piece.ROOK:
+				print("Rook " + location)
+			piece.BISHOP:
+				print("Bishop " + location)
+			piece.KNIGHT:
+				print("Knight " + location)
+			piece.PAWN:
+				print("Pawn " + location)
+	elif count > 1:
+		pass
