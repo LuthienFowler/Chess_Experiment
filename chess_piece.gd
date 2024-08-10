@@ -11,7 +11,9 @@ enum color {BLACK, WHITE}
 @onready var color_rect = $ColorRect
 @onready var label = $Label
 
-var count = 0
+var moves_taken = 0
+
+var next_legal_moves = []
 
 var location
 
@@ -46,7 +48,8 @@ func _process(_delta):
 ## Functions #######################################################################################
 
 func run_pawn():
-	pass
+	if (moves_taken == 0):
+		next_legal_moves = [Global.letter_pos[0]] 
 
 ## Signal functions ################################################################################
 
