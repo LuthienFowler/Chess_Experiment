@@ -13,7 +13,8 @@ enum color {BLACK, WHITE}
 
 var moves_taken = 0
 
-var next_legal_moves = []
+var next_legal_moves_let = []
+var next_legal_moves_num = []
 
 var next_legal_move_num
 var next_legal_move_let
@@ -56,15 +57,25 @@ func run_pawn():
 	if (moves_taken == 0):
 		if piece_color == color.BLACK:
 			next_legal_move_num = location_num_array_pos - 1
+			next_legal_moves_num.append(next_legal_move_num)
+			
+			next_legal_move_num = location_num_array_pos - 2
+			next_legal_moves_num.append(next_legal_move_num)
+			
 		elif piece_color == color.WHITE:
 			next_legal_move_num = location_num_array_pos + 1 
-		print("The next legal move is to " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[next_legal_move_num]))
+			next_legal_moves_num.append(next_legal_move_num)
+			
+			next_legal_move_num = location_num_array_pos + 1 
+			next_legal_moves_num.append(next_legal_move_num)
+	
+	print("The next legal move is to " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[next_legal_move_num]))
 
 ## Signal functions ################################################################################
 
 func _on_area_2d_area_entered(area):
 	location = area.get_name()
-	# set the location array pos for both numbers and letters
+
 	match location.left(1):
 		'a':
 			location_let_array_pos = 0
@@ -105,3 +116,6 @@ func _on_area_2d_area_entered(area):
 func _on_button_pressed():
 	if piece_type == piece.PAWN:
 		run_pawn()
+
+# next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
+# arrays for this.. 
