@@ -55,7 +55,10 @@ func _process(_delta):
 func run_pawn():
 	if (moves_taken == 0):
 		if piece_color == color.BLACK:
-			print("Next available move: ")
+			next_legal_move_num = location_num_array_pos - 1
+		elif piece_color == color.WHITE:
+			next_legal_move_num = location_num_array_pos + 1 
+		print("The next legal move is to " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[next_legal_move_num]))
 
 ## Signal functions ################################################################################
 
