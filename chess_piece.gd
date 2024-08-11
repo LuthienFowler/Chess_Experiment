@@ -56,20 +56,22 @@ func _process(_delta):
 func run_pawn():
 	if (moves_taken == 0):
 		if piece_color == color.BLACK:
-			next_legal_move_num = location_num_array_pos - 1
-			next_legal_moves_num.append(next_legal_move_num)
+			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
+			next_legal_moves_num.push_back(next_legal_move_num)
 			
-			next_legal_move_num = location_num_array_pos - 2
-			next_legal_moves_num.append(next_legal_move_num)
+			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
+			next_legal_moves_num.push_back(next_legal_move_num)
 			
 		elif piece_color == color.WHITE:
-			next_legal_move_num = location_num_array_pos + 1 
-			next_legal_moves_num.append(next_legal_move_num)
+			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
+			next_legal_moves_num.push_back(next_legal_move_num)
 			
-			next_legal_move_num = location_num_array_pos + 1 
-			next_legal_moves_num.append(next_legal_move_num)
+			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
+			next_legal_moves_num.push_back(next_legal_move_num)
 	
-	print("The next legal move is to " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[next_legal_move_num]))
+	for i in next_legal_moves_num.size(): # For debuging purposes
+		print(next_legal_moves_num[i])
+	
 
 ## Signal functions ################################################################################
 
