@@ -5,6 +5,8 @@ enum color {BLACK, WHITE}
 
 ## Variables #######################################################################################
 
+
+
 @export var piece_type = piece.PAWN
 @export var piece_color = color.BLACK
 
@@ -69,7 +71,7 @@ func run_pawn():
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
 			next_legal_moves_num.push_back(next_legal_move_num)
 	
-	for i in next_legal_moves_num.size(): # For debuging purposes
+	for i in next_legal_moves_num.size(): # For debugging purposes
 		print(next_legal_moves_num[i])
 	
 

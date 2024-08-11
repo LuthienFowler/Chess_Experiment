@@ -12,5 +12,5 @@ var num_pos = [1, 2, 3, 4, 5, 6, 7, 8]
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	pass
