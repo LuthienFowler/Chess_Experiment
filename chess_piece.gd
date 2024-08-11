@@ -16,6 +16,8 @@ var moves_taken = 0
 var next_legal_moves = []
 
 var location
+var location_letter
+var location_num
 
 ## Default functions ###############################################################################
 
@@ -49,7 +51,7 @@ func _process(_delta):
 
 func run_pawn():
 	if (moves_taken == 0):
-		next_legal_moves = [Global.letter_pos[0]] 
+		pass
 
 ## Signal functions ################################################################################
 
