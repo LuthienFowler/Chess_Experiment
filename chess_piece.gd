@@ -15,9 +15,12 @@ var moves_taken = 0
 
 var next_legal_moves = []
 
+var next_legal_move_num
+var next_legal_move_let
+
 var location
-var location_letter
-var location_num
+var location_let_array_pos
+var location_num_array_pos
 
 ## Default functions ###############################################################################
 
@@ -51,9 +54,51 @@ func _process(_delta):
 
 func run_pawn():
 	if (moves_taken == 0):
-		pass
+		if piece_color == color.BLACK:
+			print("Next available move: ")
 
 ## Signal functions ################################################################################
 
 func _on_area_2d_area_entered(area):
 	location = area.get_name()
+	# set the location array pos for both numbers and letters
+	match location.left(1):
+		'a':
+			location_let_array_pos = 0
+		'b':
+			location_let_array_pos = 1
+		'c':
+			location_let_array_pos = 2
+		'd':
+			location_let_array_pos = 3
+		'e':
+			location_let_array_pos = 4
+		'f':
+			location_let_array_pos = 5
+		'g':
+			location_let_array_pos = 6
+		'h':
+			location_let_array_pos = 7
+	
+	match int(location.left(2)):
+		1:
+			location_num_array_pos = 0
+		2:
+			location_num_array_pos = 1
+		3:
+			location_num_array_pos = 2
+		4:
+			location_num_array_pos = 3
+		5:
+			location_num_array_pos = 4
+		6:
+			location_num_array_pos = 5
+		7:
+			location_num_array_pos = 6
+		8:
+			location_num_array_pos = 7
+		
+
+func _on_button_pressed():
+	if piece_type == piece.PAWN:
+		run_pawn()
