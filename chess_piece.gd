@@ -25,6 +25,8 @@ var location
 var location_let_array_pos
 var location_num_array_pos
 
+var times_clicked = 0
+
 ## Default functions ###############################################################################
 
 func _ready():
@@ -73,8 +75,8 @@ func run_pawn():
 	else:
 		pass
 	
-	for i in next_legal_moves_num.size(): # For debugging purposes
-		print(next_legal_moves_num[i])
+	#for i in next_legal_moves_num.size(): # For debugging purposes
+		#print(next_legal_moves_num[i])
 	
 	next_legal_moves_num.clear()
 	
@@ -122,8 +124,21 @@ func _on_area_2d_area_entered(area):
 		
 
 func _on_button_pressed():
-	if piece_type == piece.PAWN:
-		run_pawn()
+	if times_clicked == 0:
+		if piece_type == piece.PAWN:
+			run_pawn()
+		times_clicked += 1 
+		
+		if Global.current_piece_selected_let != location_let_array_pos or Global.current_piece_selected_num != location_num_array_pos:
+			Global.current_piece_selected_let = location_let_array_pos
+			Global.current_piece_selected_num = location_num_array_pos
+			Global.is_piece_selected = true
+		
+		print(Global.is_piece_selected)
+	elif times_clicked > 0:
+		times_clicked = 0
+		Global.is_piece_selected = false
+		print(Global.is_piece_selected)
 
 # next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
 # arrays for this.. 
