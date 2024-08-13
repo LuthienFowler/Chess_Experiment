@@ -54,7 +54,6 @@ func _ready():
 func _process(_delta):
 	pass
 
-
 ## Functions #######################################################################################
 
 func run_pawn():
@@ -135,14 +134,23 @@ func _on_button_pressed():
 		Global.pieces_selected_let.push_back(location_let_array_pos)
 		Global.pieces_selected_num.push_back(location_num_array_pos)
 		
-		Global.is_piece_selected = true
+		if Global.pieces_selected_let.size() >= 2 and Global.pieces_selected_num.size() >= 2:
+			Global.pieces_selected_let.remove_at(0)
+			Global.pieces_selected_num.remove_at(0)
 		
-		print(Global.is_piece_selected)
+		if Global.pieces_selected_let == [] or Global.pieces_selected_num == []:
+			pass
+		elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_let[0]:
+			Global.is_piece_selected = true
+			print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_let_array_pos]))
+			print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
+		else:
+			Global.is_piece_selected = false 
+			print("Piece unselected")
 		
 	elif times_clicked > 0:
 		times_clicked = 0
 		Global.is_piece_selected = false
-		print(Global.is_piece_selected)
 
 # next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
 # arrays for this.. 
