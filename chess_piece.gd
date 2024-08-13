@@ -129,12 +129,16 @@ func _on_button_pressed():
 			run_pawn()
 		times_clicked += 1 
 		
-		if Global.current_piece_selected_let != location_let_array_pos or Global.current_piece_selected_num != location_num_array_pos:
-			Global.current_piece_selected_let = location_let_array_pos
-			Global.current_piece_selected_num = location_num_array_pos
-			Global.is_piece_selected = true
+		Global.current_piece_selected_let = location_let_array_pos
+		Global.current_piece_selected_num = location_num_array_pos
+		
+		Global.pieces_selected_let.push_back(location_let_array_pos)
+		Global.pieces_selected_num.push_back(location_num_array_pos)
+		
+		Global.is_piece_selected = true
 		
 		print(Global.is_piece_selected)
+		
 	elif times_clicked > 0:
 		times_clicked = 0
 		Global.is_piece_selected = false
