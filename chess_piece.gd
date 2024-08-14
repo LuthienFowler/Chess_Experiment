@@ -63,6 +63,9 @@ func _process(_delta):
 
 ## Functions #######################################################################################
 
+func run_knight():
+	pass
+
 func run_pawn():
 	# Getting the legal moves for the pawn
 	if (moves_taken == 0):
