@@ -11,7 +11,7 @@ var is_piece_selected = false
 var current_piece_selected_let # Where in the array the location is
 var current_piece_selected_num # This too
 
-var pieces_selected_let = []
+var pieces_selected_let = [] # These are array coordinates too just so you don't get confused
 var pieces_selected_num = []
 
 ## Default functions ###############################################################################

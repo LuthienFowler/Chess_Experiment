@@ -131,28 +131,43 @@ func _on_button_pressed():
 			run_pawn()
 		times_clicked += 1 
 		
-		# Setting the global current piece selected
-		Global.current_piece_selected_let = location_let_array_pos
-		Global.current_piece_selected_num = location_num_array_pos
-		
-		# Putting the coordinates of the piece selected onto an array
-		Global.pieces_selected_let.push_back(location_let_array_pos)
-		Global.pieces_selected_num.push_back(location_num_array_pos)
-		
-		# Deleting the last coordinate off of the array so only the current coordinates are there
-		if Global.pieces_selected_let.size() >= 2 and Global.pieces_selected_num.size() >= 2:
-			Global.pieces_selected_let.remove_at(0)
-			Global.pieces_selected_num.remove_at(0)
-		
-		# Some debug stuff idk
+		# Getting the coordinates in an array
 		if Global.pieces_selected_let == [] or Global.pieces_selected_num == []:
-			pass
-		elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_let[0]:
+			
+			# Setting the global current piece selected
+			Global.current_piece_selected_let = location_let_array_pos
+			Global.current_piece_selected_num = location_num_array_pos
+			
+			# Putting the coordinates of the piece selected onto an array
+			Global.pieces_selected_let.push_back(location_let_array_pos)
+			Global.pieces_selected_num.push_back(location_num_array_pos)
+			
+			# Deleting the prev coordinates so only the current coordinates are there
+			if Global.pieces_selected_let.size() >= 2 and Global.pieces_selected_num.size() >= 2:
+				Global.pieces_selected_let.remove_at(0)
+				Global.pieces_selected_num.remove_at(0)
+			
 			Global.is_piece_selected = true
+			
+			# Debug
 			print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_let_array_pos]))
 			print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
+			
+		elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
+			Global.is_piece_selected = true
+			
+			# Debug
+			print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_let_array_pos]))
+			print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
+			
+			# Deleting the last coordinate off of the array so only the current coordinates are there
+			if Global.pieces_selected_let.size() >= 2 and Global.pieces_selected_num.size() >= 2:
+				Global.pieces_selected_let.remove_at(0)
+				Global.pieces_selected_num.remove_at(0)
 		else:
 			Global.is_piece_selected = false 
+			
+			# Debug
 			print("Piece unselected")
 		
 	elif times_clicked > 0:
@@ -161,3 +176,5 @@ func _on_button_pressed():
 
 # next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
 # arrays for this.. 
+
+#
