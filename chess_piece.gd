@@ -136,7 +136,7 @@ func _on_button_pressed():
 	if piece_type == piece.PAWN:
 		run_pawn()
 
-	# Getting the coordinates in an array
+	# Getting the coordinates in an array and selecting the piece in both the local and global vars
 	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
 			
 		# Putting the coordinates of the piece selected onto an array
@@ -146,11 +146,6 @@ func _on_button_pressed():
 		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
-			
-		# Debug
-		print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
-		print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
-		print(this_piece_selected)
 			
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 			
@@ -167,11 +162,6 @@ func _on_button_pressed():
 		Global.is_piece_selected = true
 		this_piece_selected = true
 			
-		# Debug
-		print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
-		print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
-		print(this_piece_selected)
-			
 	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
 		
 		# Selecting the pieces in both the global and local vars
@@ -181,12 +171,4 @@ func _on_button_pressed():
 		# Clearing both arrays cause we don't need it anymore
 		Global.pieces_selected_let.clear()
 		Global.pieces_selected_num.clear()
-			
-		# Debug
-		print("Piece unselected")
-		print(this_piece_selected)
 
-# next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
-# arrays for this.. 
-
-#
