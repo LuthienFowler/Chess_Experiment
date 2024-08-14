@@ -7,7 +7,7 @@ var is_legal = false # If the move is legal or not
 var letter_pos = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'null']
 var num_pos = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
-var is_piece_selected = false
+var is_piece_selected = false # If any pieces at all are selected
 var current_piece_selected_let # Where in the array the location is
 var current_piece_selected_num # This too
 

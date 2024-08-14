@@ -25,6 +25,8 @@ var location
 var location_let_array_pos
 var location_num_array_pos
 
+var this_piece_selected = false # If this specific piece is selected
+
 var times_clicked = 0 # So we can determine if we need to select/unselect a piece
 
 ## Default functions ###############################################################################
@@ -52,7 +54,11 @@ func _ready():
 			label.text = "Pawn"
 
 func _process(_delta):
-	pass
+	
+	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
+		this_piece_selected = false
+	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
+		this_piece_selected = false
 
 ## Functions #######################################################################################
 
@@ -137,10 +143,12 @@ func _on_button_pressed():
 		Global.pieces_selected_num.push_back(location_num_array_pos)
 			
 		Global.is_piece_selected = true
+		this_piece_selected = true
 			
 		# Debug
 		print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
 		print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
+		print(this_piece_selected)
 			
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 			
@@ -154,14 +162,16 @@ func _on_button_pressed():
 			Global.pieces_selected_num.remove_at(0)
 			
 		Global.is_piece_selected = true
+		this_piece_selected = true
 			
 		# Debug
 		print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
 		print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
-		print(str(Global.pieces_selected_let.size()) + " " + str(Global.pieces_selected_num.size()))
+		print(this_piece_selected)
 			
 	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
 		Global.is_piece_selected = false 
+		this_piece_selected = false
 		
 		# Clearing both arrays cause we don't need it anymore
 		Global.pieces_selected_let.clear()
@@ -169,6 +179,7 @@ func _on_button_pressed():
 			
 		# Debug
 		print("Piece unselected")
+		print(this_piece_selected)
 
 # next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
 # arrays for this.. 
