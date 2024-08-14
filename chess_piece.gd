@@ -124,58 +124,51 @@ func _on_area_2d_area_entered(area):
 		
 
 func _on_button_pressed():
-	if times_clicked == 0:
 		
-		# Getting the next legal moves for the respective piece type : Change to a match statement at some point pls
-		if piece_type == piece.PAWN:
-			run_pawn()
-		# times_clicked = 1 
-		#
-		## Getting the coordinates in an array
-		if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
+	# Getting the next legal moves for the respective piece type : Change to a match statement at some point pls
+	if piece_type == piece.PAWN:
+		run_pawn()
+
+	# Getting the coordinates in an array
+	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
 			
-			# Putting the coordinates of the piece selected onto an array
-			Global.pieces_selected_let.push_back(location_let_array_pos)
-			Global.pieces_selected_num.push_back(location_num_array_pos)
+		# Putting the coordinates of the piece selected onto an array
+		Global.pieces_selected_let.push_back(location_let_array_pos)
+		Global.pieces_selected_num.push_back(location_num_array_pos)
 			
-			Global.is_piece_selected = true
+		Global.is_piece_selected = true
 			
-			# Debug
-			print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
-			print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
+		# Debug
+		print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
+		print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
 			
-		elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
+	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 			
-			# Putting the coordinates of the piece selected onto an array
-			Global.pieces_selected_let.push_back(location_let_array_pos)
-			Global.pieces_selected_num.push_back(location_num_array_pos)
+		# Putting the coordinates of the piece selected onto an array
+		Global.pieces_selected_let.push_back(location_let_array_pos)
+		Global.pieces_selected_num.push_back(location_num_array_pos)
 			
-			# Deleting the last coordinate off of the array so only the current coordinates are there
-			if Global.pieces_selected_let.size() > 1 and Global.pieces_selected_num.size() > 1:
-				Global.pieces_selected_let.remove_at(0)
-				Global.pieces_selected_num.remove_at(0)
+		# Deleting the last coordinate off of the array so only the current coordinates are there
+		if Global.pieces_selected_let.size() > 1 and Global.pieces_selected_num.size() > 1:
+			Global.pieces_selected_let.remove_at(0)
+			Global.pieces_selected_num.remove_at(0)
 			
-			Global.is_piece_selected = true
+		Global.is_piece_selected = true
 			
-			# Debug
-			print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
-			print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
-			print(str(Global.pieces_selected_let.size()) + " " + str(Global.pieces_selected_num.size()))
+		# Debug
+		print("Current piece selected: " + str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
+		print(str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]]))
+		print(str(Global.pieces_selected_let.size()) + " " + str(Global.pieces_selected_num.size()))
 			
-		elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
-			Global.is_piece_selected = false 
+	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
+		Global.is_piece_selected = false 
+		
+		# Clearing both arrays cause we don't need it anymore
+		Global.pieces_selected_let.clear()
+		Global.pieces_selected_num.clear()
 			
-			Global.pieces_selected_let.clear()
-			Global.pieces_selected_num.clear()
-			
-			# Debug
-			print("Piece unselected")
-		#
-	elif times_clicked > 0:
-		pass
-		# times_clicked = 0
-		#Global.is_piece_selected = false
-	# print(str(Global.letter_pos[location_let_array_pos]) + str(Global.num_pos[location_num_array_pos]))
+		# Debug
+		print("Piece unselected")
 
 # next course of action -> making it so we can have multiple legal moves. Unfortunately I'll be using a lot of 
 # arrays for this.. 
