@@ -171,4 +171,3 @@ func _on_button_pressed():
 		# Clearing both arrays cause we don't need it anymore
 		Global.pieces_selected_let.clear()
 		Global.pieces_selected_num.clear()
-

@@ -31,3 +31,12 @@ func select_piece():
 # - Making it so a piece unselects when the player selects another piece.
 # - Getting the legal moves of a more complicated piece (Rn I'm gonna focus on the knight)
 # - Making the pieces move to a spot on the board
+
+# Things achieved so far:
+# - Made the board and chess pieces
+# - Made it so selection happens
+
+# Next actions: 
+# - Make it so we can actually move pieces around 
+# - Fix the legal move prediction
+# - Getting the legal moves of a more complicated piece (Rn I'm gonna focus on the knight)
