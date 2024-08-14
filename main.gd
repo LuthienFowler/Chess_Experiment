@@ -45,6 +45,7 @@ func move_piece():
 	if Global.is_piece_selected:
 		piece_selected = str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]])
 		
+		# Getting the path of the piece selected
 		for i in rows:
 			current_row = row_path + str(row) # Rows are the NUMBERS 
 			for j in rows:
@@ -54,7 +55,6 @@ func move_piece():
 					break
 					
 				column -= 1
-			
 			if current_tile.name == piece_selected:
 				break
 			
@@ -62,9 +62,14 @@ func move_piece():
 			actual_row -= 1
 			column = 7
 		
+		# Debug
 		print("Current piece selected: " + current_tile.name)
+		
 	elif !Global.is_piece_selected:
+		
 		current_tile = null
+		
+		# Debug
 		print("Piece not selected")
 		print(current_tile)
 # Get all the tiles in the board and their positions
