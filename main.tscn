@@ -306,7 +306,7 @@ offset_right = 292.0
 offset_bottom = 209.0
 color = Color(0.958257, 0.422693, 0.245134, 1)
 
-[node name="e5" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
+[node name="h4" parent="Board/Row5" instance=ExtResource("1_a0bsv")]
 offset_left = 292.0
 offset_top = 169.0
 offset_right = 332.0

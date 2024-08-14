@@ -5,10 +5,26 @@ extends Node2D
 var tile_pos_x = []
 var tile_pos_y = []
 
+var row = 1
+var actual_row = 7
+var column = 7
+const rows = 8
+const row_path = "Board/Row"
+var current_row
+var current_tile
+
 ## Default functions ###############################################################################
 
 func _ready():
-	pass # Replace with function body.
+	for i in rows:
+		current_row = row_path + str(row) # Rows are the NUMBERS 
+		for j in rows:
+			current_tile = get_node(current_row + "/" + str(Global.letter_pos[column]) + str(Global.num_pos[actual_row]))
+			print(current_tile.name)
+			column -= 1
+		row += 1
+		actual_row -= 1
+		column = 7
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
