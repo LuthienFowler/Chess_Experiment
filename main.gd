@@ -1,5 +1,11 @@
 extends Node2D
 
+var black_pieces_dict = {
+	"Bqueen" = $Pieces/Black/Queen , 
+	"Bking" = $Pieces/Black/King ,
+	"Bbishop1" = $Pieces/Black/Bishop1 , 
+	"Bbishop2" = $Pieces/Black/Bishop2
+}
 ## Variables #######################################################################################
 
 var tile_pos_x = []
