@@ -25,7 +25,7 @@ var location
 var location_let_array_pos
 var location_num_array_pos
 
-var times_clicked = 0
+var times_clicked = 0 # So we can determine if we need to select/unselect a piece
 
 ## Default functions ###############################################################################
 
@@ -57,6 +57,7 @@ func _process(_delta):
 ## Functions #######################################################################################
 
 func run_pawn():
+	# Getting the legal moves for the pawn
 	if (moves_taken == 0):
 		if piece_color == color.BLACK:
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
@@ -124,20 +125,26 @@ func _on_area_2d_area_entered(area):
 
 func _on_button_pressed():
 	if times_clicked == 0:
+		
+		# Getting the next legal moves for the respective piece type : Change to a match statement at some point pls
 		if piece_type == piece.PAWN:
 			run_pawn()
 		times_clicked += 1 
 		
+		# Setting the global current piece selected
 		Global.current_piece_selected_let = location_let_array_pos
 		Global.current_piece_selected_num = location_num_array_pos
 		
+		# Putting the coordinates of the piece selected onto an array
 		Global.pieces_selected_let.push_back(location_let_array_pos)
 		Global.pieces_selected_num.push_back(location_num_array_pos)
 		
+		# Deleting the last coordinate off of the array so only the current coordinates are there
 		if Global.pieces_selected_let.size() >= 2 and Global.pieces_selected_num.size() >= 2:
 			Global.pieces_selected_let.remove_at(0)
 			Global.pieces_selected_num.remove_at(0)
 		
+		# Some debug stuff idk
 		if Global.pieces_selected_let == [] or Global.pieces_selected_num == []:
 			pass
 		elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_let[0]:
