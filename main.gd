@@ -20,11 +20,14 @@ func _ready():
 		current_row = row_path + str(row) # Rows are the NUMBERS 
 		for j in rows:
 			current_tile = get_node(current_row + "/" + str(Global.letter_pos[column]) + str(Global.num_pos[actual_row]))
-			print(current_tile.name)
+			tile_pos_x.push_back(current_tile.position.x)
+			tile_pos_y.push_back(current_tile.position.y)
 			column -= 1
 		row += 1
 		actual_row -= 1
 		column = 7
+	
+	print("position of b8: " + str(tile_pos_x[1]) + ", " + str(tile_pos_y[1]))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
