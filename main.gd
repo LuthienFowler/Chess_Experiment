@@ -12,10 +12,13 @@ const rows = 8
 const row_path = "Board/Row"
 var current_row
 var current_tile
+var piece_selected
 
 ## Default functions ###############################################################################
 
 func _ready():
+	
+	# Getting the pos of every tile in an array
 	for i in rows:
 		current_row = row_path + str(row) # Rows are the NUMBERS 
 		for j in rows:
@@ -26,14 +29,44 @@ func _ready():
 		row += 1
 		actual_row -= 1
 		column = 7
-	
-	print("position of b8: " + str(tile_pos_x[1]) + ", " + str(tile_pos_y[1]))
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	move_piece()
 
+## Functions #######################################################################################
+
+func move_piece():
+	
+	actual_row = 7
+	column = 7
+	row = 1
+	
+	# Getting the specific piece selected
+	if Global.is_piece_selected:
+		piece_selected = str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]])
+		
+		for i in rows:
+			current_row = row_path + str(row) # Rows are the NUMBERS 
+			for j in rows:
+				current_tile = get_node(current_row + "/" + str(Global.letter_pos[column]) + str(Global.num_pos[actual_row]))
+				
+				if current_tile.name == piece_selected:
+					break
+					
+				column -= 1
+			
+			if current_tile.name == piece_selected:
+				break
+			
+			row += 1
+			actual_row -= 1
+			column = 7
+		
+		print("Current piece selected: " + current_tile.name)
+	elif !Global.is_piece_selected:
+		current_tile = null
+		print("Piece not selected")
+		print(current_tile)
 # Get all the tiles in the board and their positions
 # Put them all into an array (and maybe offset them a bit if needed)
 # If we select a tile while a piece is selected, move that tile, and unselect the piece 
