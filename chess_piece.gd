@@ -55,6 +55,7 @@ func _ready():
 
 func _process(_delta):
 	
+	# Making sure the this_piece_selected is false if the piece isn't selected
 	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
 		this_piece_selected = false
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
@@ -141,7 +142,8 @@ func _on_button_pressed():
 		# Putting the coordinates of the piece selected onto an array
 		Global.pieces_selected_let.push_back(location_let_array_pos)
 		Global.pieces_selected_num.push_back(location_num_array_pos)
-			
+		
+		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
 			
@@ -160,7 +162,8 @@ func _on_button_pressed():
 		if Global.pieces_selected_let.size() > 1 and Global.pieces_selected_num.size() > 1:
 			Global.pieces_selected_let.remove_at(0)
 			Global.pieces_selected_num.remove_at(0)
-			
+		
+		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
 			
@@ -170,6 +173,8 @@ func _on_button_pressed():
 		print(this_piece_selected)
 			
 	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
+		
+		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = false 
 		this_piece_selected = false
 		
