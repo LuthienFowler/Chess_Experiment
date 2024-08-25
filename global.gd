@@ -19,6 +19,9 @@ var current_piece_selected_num # This too
 var pieces_selected_let = [] # These are array coordinates too just so you don't get confused
 var pieces_selected_num = []
 
+var next_legal_moves_let = [] # These are NOT array coordinates
+var next_legal_moves_num = []
+
 ## Default functions ###############################################################################
 
 func _ready():

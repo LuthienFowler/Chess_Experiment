@@ -10,9 +10,6 @@ extends Node2D
 
 var moves_taken = 0
 
-var next_legal_moves_let = []
-var next_legal_moves_num = []
-
 var next_legal_move_num
 var next_legal_move_let
 
@@ -53,20 +50,20 @@ func _process(_delta):
 	# Making sure the this_piece_selected is false if the piece isn't selected
 	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
 		this_piece_selected = false
-		next_legal_moves_let.clear()
-		next_legal_moves_num.clear()
+		Global.next_legal_moves_let.clear()
+		Global.next_legal_moves_num.clear()
 		
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 		this_piece_selected = false
-		next_legal_moves_let.clear()
-		next_legal_moves_num.clear()
+		Global.next_legal_moves_let.clear()
+		Global.next_legal_moves_num.clear()
 	
-	if this_piece_selected == true and next_legal_moves_num == [] and next_legal_moves_let == []:
+	if this_piece_selected == true and Global.next_legal_moves_num == [] and Global.next_legal_moves_let == []:
 		match piece_type:
 			Global.piece.PAWN:
 				pawn_legal_moves()
-				print(str(next_legal_moves_let[0]) + str(next_legal_moves_num[0]))
-				print(str(next_legal_moves_let[0]) + str(next_legal_moves_num[1]))
+				print(str(Global.next_legal_moves_let) + str(Global.next_legal_moves_num))
+				print(str(Global.next_legal_moves_let) + str(Global.next_legal_moves_num))
 
 ## Functions #######################################################################################
 
@@ -81,31 +78,31 @@ func pawn_legal_moves(): # Getting the legal moves for the pawn
 	if (moves_taken == 0):
 		if piece_color == Global.color.BLACK:
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
-			next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
 			
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
-			next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
 			
-			next_legal_moves_let.push_back(location.left(1))
+			Global.next_legal_moves_let.push_back(location.left(1))
 			
 		elif piece_color == Global.color.WHITE:
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
-			next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
 			
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
-			next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
 			
-			next_legal_moves_let.push_back(location.left(1))
+			Global.next_legal_moves_let.push_back(location.left(1))
 	else:
 		if piece_color == Global.color.BLACK:
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
-			next_legal_moves_num.push_back(next_legal_move_num)
-			next_legal_moves_let.push_back(location.left(0))
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_let.push_back(location.left(1))
 			
 		elif piece_color == Global.color.WHITE:
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
-			next_legal_moves_num.push_back(next_legal_move_num)
-			next_legal_moves_let.push_back(location.left(0))
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_let.push_back(location.left(1))
 	
 	
 
@@ -188,3 +185,7 @@ func _on_button_pressed():
 		# Clearing both arrays cause we don't need it anymore
 		Global.pieces_selected_let.clear()
 		Global.pieces_selected_num.clear()
+		
+		# Clearing legal arrays too
+		Global.next_legal_moves_let.clear()
+		Global.next_legal_moves_num.clear()
