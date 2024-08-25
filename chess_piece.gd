@@ -5,8 +5,6 @@ enum color {BLACK, WHITE}
 
 ## Variables #######################################################################################
 
-signal waiting_for_next_move
-
 @export var piece_type = piece.PAWN
 @export var piece_color = color.BLACK
 

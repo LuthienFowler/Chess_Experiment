@@ -1,7 +1,5 @@
 extends ColorRect
 
-signal move_piece(loc)
-
 ## Variables #######################################################################################
 
 @export var dark = false
@@ -28,5 +26,5 @@ func color_tile():
 
 func _on_button_pressed():
 	if Global.is_piece_selected:
-		move_piece.emit(location)
+		SignalBus.move_piece.emit(location)
 		# Send a signal to main to deal with the movement of the piece 

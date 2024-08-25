@@ -1,5 +1,7 @@
 extends Node
 
+# This is an autoloaded script
+
 ## Variables #######################################################################################
 
 var is_legal = false # If the move is legal or not
