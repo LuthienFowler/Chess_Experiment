@@ -72,7 +72,7 @@ func get_piece_path(): # Getting the path of the piece selected
 			column = 7
 		
 
-func _on_move_piece(next_location):
+func _on_move_piece(_next_location):
 	if Global.is_legal:
 		print("You would go there in a complete game")
 	else:

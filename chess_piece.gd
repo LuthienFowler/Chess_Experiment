@@ -62,8 +62,6 @@ func _process(_delta):
 		match piece_type:
 			Global.piece.PAWN:
 				pawn_legal_moves()
-				print(str(Global.next_legal_moves_let) + str(Global.next_legal_moves_num))
-				print(str(Global.next_legal_moves_let) + str(Global.next_legal_moves_num))
 
 ## Functions #######################################################################################
 
@@ -83,7 +81,10 @@ func pawn_legal_moves(): # Getting the legal moves for the pawn
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
 			Global.next_legal_moves_num.push_back(next_legal_move_num)
 			
-			Global.next_legal_moves_let.push_back(location.left(1))
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
+			
+			print(str(Global.next_legal_moves_let))
+			print(str(Global.next_legal_moves_num))
 			
 		elif piece_color == Global.color.WHITE:
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
@@ -92,18 +93,26 @@ func pawn_legal_moves(): # Getting the legal moves for the pawn
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
 			Global.next_legal_moves_num.push_back(next_legal_move_num)
 			
-			Global.next_legal_moves_let.push_back(location.left(1))
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
+			
+			print(str(Global.next_legal_moves_let))
+			print(str(Global.next_legal_moves_num))
+			
 	else:
 		if piece_color == Global.color.BLACK:
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
 			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			Global.next_legal_moves_let.push_back(location.left(1))
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
 			
 		elif piece_color == Global.color.WHITE:
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
 			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			Global.next_legal_moves_let.push_back(location.left(1))
-	
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
+
+func run_legal_moves():
+	match piece_type:
+		Global.piece.PAWN:
+			pawn_legal_moves()
 	
 
 ## Signal functions ################################################################################
@@ -149,7 +158,7 @@ func _on_area_2d_area_entered(area):
 		
 
 func _on_button_pressed():
-
+	
 	# Getting the coordinates in an array and selecting the piece in both the local and global vars
 	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
 			
@@ -160,6 +169,8 @@ func _on_button_pressed():
 		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
+		
+		run_legal_moves()
 			
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 			
@@ -175,6 +186,8 @@ func _on_button_pressed():
 		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
+		
+		run_legal_moves()
 			
 	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
 		
