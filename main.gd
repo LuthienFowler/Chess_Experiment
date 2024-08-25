@@ -1,10 +1,18 @@
 extends Node2D
 
 var black_pieces_dict = {
-	"Bqueen" = $Pieces/Black/Queen , 
-	"Bking" = $Pieces/Black/King ,
-	"Bbishop1" = $Pieces/Black/Bishop1 , 
-	"Bbishop2" = $Pieces/Black/Bishop2
+	"Bqueen" = $Pieces/Black/Queen, 
+	"Bking" = $Pieces/Black/King,
+	"Bbishop1" = $Pieces/Black/Bishop1, 
+	"Bbishop2" = $Pieces/Black/Bishop2,
+	"Bknight1" = $Pieces/Black/Knight1,
+	"Bknight2" = $Pieces/Black/Knight2,
+	"Brook1" = $Pieces/Black/Rook1,
+	"Brook2" = $Pieces/Black/Rook2,
+	"Bpawn1" = $Pieces/Black/Pawn1,
+	"Bpawn2" = $Pieces/Black/Pawn2,
+	"Bpawn3" = $Pieces/Black/Pawn3,
+	"Bpawn4" = $Pieces/Black/Pawn4
 }
 ## Variables #######################################################################################
 

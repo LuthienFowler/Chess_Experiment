@@ -553,10 +553,10 @@ position = Vector2(-28, -152)
 [node name="Pawn6" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
 position = Vector2(-87, -154)
 
-[node name="Pawn8" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+[node name="Pawn7" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
 position = Vector2(-147, -152)
 
-[node name="Pawn9" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
+[node name="Pawn8" parent="Pieces/Black" instance=ExtResource("2_gta7v")]
 position = Vector2(-206, -152)
 
 [node name="White" type="Node2D" parent="Pieces"]
@@ -627,10 +627,10 @@ piece_color = 1
 position = Vector2(-89, 147)
 piece_color = 1
 
-[node name="Pawn8" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+[node name="Pawn7" parent="Pieces/White" instance=ExtResource("2_gta7v")]
 position = Vector2(-147, 149)
 piece_color = 1
 
-[node name="Pawn9" parent="Pieces/White" instance=ExtResource("2_gta7v")]
+[node name="Pawn8" parent="Pieces/White" instance=ExtResource("2_gta7v")]
 position = Vector2(-209, 146)
 piece_color = 1
