@@ -2,6 +2,9 @@ extends Node
 
 # This is an autoloaded script
 
+enum piece {KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN}
+enum color {BLACK, WHITE}
+
 ## Variables #######################################################################################
 
 var is_legal = false # If the move is legal or not

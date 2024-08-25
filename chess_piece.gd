@@ -1,12 +1,9 @@
 extends Node2D
 
-enum piece {KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN}
-enum color {BLACK, WHITE}
-
 ## Variables #######################################################################################
 
-@export var piece_type = piece.PAWN
-@export var piece_color = color.BLACK
+@export var piece_type = Global.piece.PAWN
+@export var piece_color = Global.color.BLACK
 
 @onready var color_rect = $ColorRect
 @onready var label = $Label
@@ -30,7 +27,7 @@ var times_clicked = 0 # So we can determine if we need to select/unselect a piec
 ## Default functions ###############################################################################
 
 func _ready():
-	if piece_color == color.BLACK:
+	if piece_color == Global.color.BLACK:
 		color_rect.color = Color("000214")
 		label.set("theme_override_colors/font_color", Color("b6bed1"))
 	else:
@@ -38,17 +35,17 @@ func _ready():
 		label.set("theme_override_colors/font_color", Color("000214"))
 	
 	match piece_type:
-		piece.KING:
+		Global.piece.KING:
 			label.text = "King"
-		piece.QUEEN:
+		Global.piece.QUEEN:
 			label.text = "Queen"
-		piece.ROOK:
+		Global.piece.ROOK:
 			label.text = "Rook"
-		piece.BISHOP:
+		Global.piece.BISHOP:
 			label.text = "Bishop"
-		piece.KNIGHT:
+		Global.piece.KNIGHT:
 			label.text = "Knight"
-		piece.PAWN:
+		Global.piece.PAWN:
 			label.text = "Pawn"
 
 func _process(_delta):
@@ -56,38 +53,60 @@ func _process(_delta):
 	# Making sure the this_piece_selected is false if the piece isn't selected
 	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
 		this_piece_selected = false
+		next_legal_moves_let.clear()
+		next_legal_moves_num.clear()
+		
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 		this_piece_selected = false
+		next_legal_moves_let.clear()
+		next_legal_moves_num.clear()
+	
+	if this_piece_selected == true and next_legal_moves_num == [] and next_legal_moves_let == []:
+		match piece_type:
+			Global.piece.PAWN:
+				pawn_legal_moves()
+				print(str(next_legal_moves_let[0]) + str(next_legal_moves_num[0]))
+				print(str(next_legal_moves_let[0]) + str(next_legal_moves_num[1]))
 
 ## Functions #######################################################################################
 
-func run_knight():
-	if piece_color == color.BLACK:
+func knight_legal_moves(): # Getting the legal moves for the knight
+	if piece_color == Global.color.BLACK:
 		pass
 			
-	elif piece_color == color.WHITE:
+	elif piece_color == Global.color.WHITE:
 		pass
 
-func run_pawn():
-	# Getting the legal moves for the pawn
+func pawn_legal_moves(): # Getting the legal moves for the pawn
 	if (moves_taken == 0):
-		if piece_color == color.BLACK:
+		if piece_color == Global.color.BLACK:
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
 			next_legal_moves_num.push_back(next_legal_move_num)
 			
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
 			next_legal_moves_num.push_back(next_legal_move_num)
 			
-		elif piece_color == color.WHITE:
+			next_legal_moves_let.push_back(location.left(1))
+			
+		elif piece_color == Global.color.WHITE:
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
 			next_legal_moves_num.push_back(next_legal_move_num)
 			
 			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
 			next_legal_moves_num.push_back(next_legal_move_num)
+			
+			next_legal_moves_let.push_back(location.left(1))
 	else:
-		pass
+		if piece_color == Global.color.BLACK:
+			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
+			next_legal_moves_num.push_back(next_legal_move_num)
+			next_legal_moves_let.push_back(location.left(0))
+			
+		elif piece_color == Global.color.WHITE:
+			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
+			next_legal_moves_num.push_back(next_legal_move_num)
+			next_legal_moves_let.push_back(location.left(0))
 	
-	next_legal_moves_num.clear() # Fix this soon
 	
 
 ## Signal functions ################################################################################
@@ -133,10 +152,6 @@ func _on_area_2d_area_entered(area):
 		
 
 func _on_button_pressed():
-		
-	# Getting the next legal moves for the respective piece type : Change to a match statement at some point pls
-	if piece_type == piece.PAWN:
-		run_pawn()
 
 	# Getting the coordinates in an array and selecting the piece in both the local and global vars
 	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
