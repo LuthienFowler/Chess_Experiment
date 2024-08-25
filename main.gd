@@ -1,42 +1,42 @@
 extends Node2D
 
-var black_pieces_dict = {
-	"Bqueen" = $Pieces/Black/Queen, 
-	"Bking" = $Pieces/Black/King,
-	"Bbishop1" = $Pieces/Black/Bishop1, 
-	"Bbishop2" = $Pieces/Black/Bishop2,
-	"Bknight1" = $Pieces/Black/Knight1,
-	"Bknight2" = $Pieces/Black/Knight2,
-	"Brook1" = $Pieces/Black/Rook1,
-	"Brook2" = $Pieces/Black/Rook2,
-	"Bpawn1" = $Pieces/Black/Pawn1,
-	"Bpawn2" = $Pieces/Black/Pawn2,
-	"Bpawn3" = $Pieces/Black/Pawn3,
-	"Bpawn4" = $Pieces/Black/Pawn4,
-	"Bpawn5" = $Pieces/Black/Pawn5,
-	"Bpawn6" = $Pieces/Black/Pawn6,
-	"Bpawn7" = $Pieces/Black/Pawn7,
-	"Bpawn8" = $Pieces/Black/Pawn8
-}
-
-var white_pieces_dict = {
-	"Wqueen" = $Pieces/White/Queen, 
-	"Wking" = $Pieces/White/King,
-	"Wbishop1" = $Pieces/White/Bishop1, 
-	"Wbishop2" = $Pieces/White/Bishop2,
-	"Wknight1" = $Pieces/White/Knight1,
-	"Wknight2" = $Pieces/White/Knight2,
-	"Wrook1" = $Pieces/White/Rook1,
-	"Wrook2" = $Pieces/White/Rook2,
-	"Wpawn1" = $Pieces/White/Pawn1,
-	"Wpawn2" = $Pieces/White/Pawn2,
-	"Wpawn3" = $Pieces/White/Pawn3,
-	"Wpawn4" = $Pieces/White/Pawn4,
-	"Wpawn5" = $Pieces/White/Pawn5,
-	"Wpawn6" = $Pieces/White/Pawn6,
-	"Wpawn7" = $Pieces/White/Pawn7,
-	"Wpawn8" = $Pieces/White/Pawn8
-}
+#var black_pieces_dict = {
+	#"Bqueen" = $Pieces/Black/Queen, 
+	#"Bking" = $Pieces/Black/King,
+	#"Bbishop1" = $Pieces/Black/Bishop1, 
+	#"Bbishop2" = $Pieces/Black/Bishop2,
+	#"Bknight1" = $Pieces/Black/Knight1,
+	#"Bknight2" = $Pieces/Black/Knight2,
+	#"Brook1" = $Pieces/Black/Rook1,
+	#"Brook2" = $Pieces/Black/Rook2,
+	#"Bpawn1" = $Pieces/Black/Pawn1,
+	#"Bpawn2" = $Pieces/Black/Pawn2,
+	#"Bpawn3" = $Pieces/Black/Pawn3,
+	#"Bpawn4" = $Pieces/Black/Pawn4,
+	#"Bpawn5" = $Pieces/Black/Pawn5,
+	#"Bpawn6" = $Pieces/Black/Pawn6,
+	#"Bpawn7" = $Pieces/Black/Pawn7,
+	#"Bpawn8" = $Pieces/Black/Pawn8
+#}
+#
+#var white_pieces_dict = {
+	#"Wqueen" = $Pieces/White/Queen, 
+	#"Wking" = $Pieces/White/King,
+	#"Wbishop1" = $Pieces/White/Bishop1, 
+	#"Wbishop2" = $Pieces/White/Bishop2,
+	#"Wknight1" = $Pieces/White/Knight1,
+	#"Wknight2" = $Pieces/White/Knight2,
+	#"Wrook1" = $Pieces/White/Rook1,
+	#"Wrook2" = $Pieces/White/Rook2,
+	#"Wpawn1" = $Pieces/White/Pawn1,
+	#"Wpawn2" = $Pieces/White/Pawn2,
+	#"Wpawn3" = $Pieces/White/Pawn3,
+	#"Wpawn4" = $Pieces/White/Pawn4,
+	#"Wpawn5" = $Pieces/White/Pawn5,
+	#"Wpawn6" = $Pieces/White/Pawn6,
+	#"Wpawn7" = $Pieces/White/Pawn7,
+	#"Wpawn8" = $Pieces/White/Pawn8
+# }
 ## Variables #######################################################################################
 
 var tile_pos_x = []
@@ -71,8 +71,8 @@ func _ready():
 	SignalBus.move_piece.connect(_on_move_piece)
 
 func _process(_delta):
-	# move_piece()
-	pass
+	move_piece()
+	# pass
 
 ## Functions #######################################################################################
 
@@ -85,7 +85,6 @@ func move_piece():
 	# Getting the specific piece selected
 	if Global.is_piece_selected:
 		piece_selected = str(Global.letter_pos[Global.pieces_selected_let[0]]) + str(Global.num_pos[Global.pieces_selected_num[0]])
-		
 		get_piece_path()
 		
 		# Debug
@@ -117,7 +116,7 @@ func get_piece_path(): # Getting the path of the piece selected
 		
 
 func _on_move_piece():
-	pass
+	print("This piece is waiting to be moved")
 # Get all the tiles in the board and their positions
 # Put them all into an array (and maybe offset them a bit if needed)
 # If we select a tile while a piece is selected, move that tile, and unselect the piece 
