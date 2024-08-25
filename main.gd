@@ -12,7 +12,30 @@ var black_pieces_dict = {
 	"Bpawn1" = $Pieces/Black/Pawn1,
 	"Bpawn2" = $Pieces/Black/Pawn2,
 	"Bpawn3" = $Pieces/Black/Pawn3,
-	"Bpawn4" = $Pieces/Black/Pawn4
+	"Bpawn4" = $Pieces/Black/Pawn4,
+	"Bpawn5" = $Pieces/Black/Pawn5,
+	"Bpawn6" = $Pieces/Black/Pawn6,
+	"Bpawn7" = $Pieces/Black/Pawn7,
+	"Bpawn8" = $Pieces/Black/Pawn8
+}
+
+var white_pieces_dict = {
+	"Wqueen" = $Pieces/White/Queen, 
+	"Wking" = $Pieces/White/King,
+	"Wbishop1" = $Pieces/White/Bishop1, 
+	"Wbishop2" = $Pieces/White/Bishop2,
+	"Wknight1" = $Pieces/White/Knight1,
+	"Wknight2" = $Pieces/White/Knight2,
+	"Wrook1" = $Pieces/White/Rook1,
+	"Wrook2" = $Pieces/White/Rook2,
+	"Wpawn1" = $Pieces/White/Pawn1,
+	"Wpawn2" = $Pieces/White/Pawn2,
+	"Wpawn3" = $Pieces/White/Pawn3,
+	"Wpawn4" = $Pieces/White/Pawn4,
+	"Wpawn5" = $Pieces/White/Pawn5,
+	"Wpawn6" = $Pieces/White/Pawn6,
+	"Wpawn7" = $Pieces/White/Pawn7,
+	"Wpawn8" = $Pieces/White/Pawn8
 }
 ## Variables #######################################################################################
 

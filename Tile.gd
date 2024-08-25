@@ -25,4 +25,6 @@ func color_tile():
 
 
 func _on_button_pressed():
-	pass
+	if Global.is_piece_selected:
+		pass
+		# Send a signal to main to deal with the movement of the piece 

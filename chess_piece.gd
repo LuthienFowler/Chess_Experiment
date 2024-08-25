@@ -64,7 +64,11 @@ func _process(_delta):
 ## Functions #######################################################################################
 
 func run_knight():
-	pass
+	if piece_color == color.BLACK:
+		pass
+			
+	elif piece_color == color.WHITE:
+		pass
 
 func run_pawn():
 	# Getting the legal moves for the pawn
@@ -84,9 +88,6 @@ func run_pawn():
 			next_legal_moves_num.push_back(next_legal_move_num)
 	else:
 		pass
-	
-	#for i in next_legal_moves_num.size(): # For debugging purposes
-		#print(next_legal_moves_num[i])
 	
 	next_legal_moves_num.clear() # Fix this soon
 	
