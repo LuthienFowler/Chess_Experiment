@@ -24,6 +24,24 @@ var times_clicked = 0 # So we can determine if we need to select/unselect a piec
 ## Default functions ###############################################################################
 
 func _ready():
+	ready_game()
+
+func _process(_delta):
+	
+	# Making sure the this_piece_selected is false if the piece isn't selected
+	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
+		this_piece_selected = false
+		Global.next_legal_moves_let.clear()
+		Global.next_legal_moves_num.clear()
+		
+	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
+		this_piece_selected = false
+		Global.next_legal_moves_let.clear()
+		Global.next_legal_moves_num.clear()
+
+## Functions #######################################################################################
+
+func ready_game():
 	if piece_color == Global.color.BLACK:
 		color_rect.color = Color("000214")
 		label.set("theme_override_colors/font_color", Color("b6bed1"))
@@ -44,21 +62,6 @@ func _ready():
 			label.text = "Knight"
 		Global.piece.PAWN:
 			label.text = "Pawn"
-
-func _process(_delta):
-	
-	# Making sure the this_piece_selected is false if the piece isn't selected
-	if Global.pieces_selected_let == [] and Global.pieces_selected_num == []:
-		this_piece_selected = false
-		Global.next_legal_moves_let.clear()
-		Global.next_legal_moves_num.clear()
-		
-	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
-		this_piece_selected = false
-		Global.next_legal_moves_let.clear()
-		Global.next_legal_moves_num.clear()
-
-## Functions #######################################################################################
 
 func get_location(): # Getting where the piece is located
 	match location.left(1):
@@ -113,7 +116,7 @@ func pawn_legal_moves(): # Getting the legal moves for the pawn
 			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
 			Global.next_legal_moves_num.push_front(next_legal_move_num)
 			
-			Global.next_legal_moves_let.push_front(Global.letter_pos[location_let_array_pos])
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
 			
 			print(str(Global.next_legal_moves_let))
 			print(str(Global.next_legal_moves_num))
@@ -146,6 +149,8 @@ func run_legal_moves():
 		Global.piece.PAWN:
 			pawn_legal_moves()
 
+func piece(): # Identifying function
+	pass
 ## Signal functions ################################################################################
 
 func _on_area_2d_area_entered(area):
@@ -163,13 +168,12 @@ func _on_button_pressed():
 		Global.pieces_selected_let.push_back(location_let_array_pos)
 		Global.pieces_selected_num.push_back(location_num_array_pos)
 		
+		run_legal_moves()
+		
 		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
 		
-		run_legal_moves()
-		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[0]))
-		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[1]))
 			
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 			
@@ -182,17 +186,15 @@ func _on_button_pressed():
 			Global.pieces_selected_let.remove_at(0)
 			Global.pieces_selected_num.remove_at(0)
 		
+		run_legal_moves()
+		
 		# Selecting the pieces in both the global and local vars
 		Global.is_piece_selected = true
 		this_piece_selected = true
 		
-		run_legal_moves()
-		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[0]))
-		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[1]))
-			
 	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
 		
-		# Selecting the pieces in both the global and local vars
+		# Deselecting the pieces in both the global and local vars
 		Global.is_piece_selected = false 
 		this_piece_selected = false
 		

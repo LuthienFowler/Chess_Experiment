@@ -3,7 +3,7 @@ extends ColorRect
 ## Variables #######################################################################################
 
 @export var dark = false
-@onready var location = get_name()
+@onready var location = str(get_name())
 var area
 var let_is_legal
 
@@ -27,8 +27,7 @@ func color_tile():
 func determine_legal_move():
 	let_is_legal = false
 	
-	if(str(location.left(1)) == str(Global.next_legal_moves_let[0])):
-		let_is_legal = true
+	print(str(Global.next_legal_moves_let))
 	
 	#for i in Global.next_legal_moves_let.size():
 		#if str(location.left(1)) == str(Global.next_legal_moves_let[i]):
@@ -37,10 +36,10 @@ func determine_legal_move():
 		#else:
 			#i += 1
 		#return let_is_legal
-		
-	
 
-
+func tile(): # Identifying function
+	pass
+## Signal functions ################################################################################
 
 func _on_button_pressed():
 	if Global.is_piece_selected:
