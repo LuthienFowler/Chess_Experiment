@@ -31,7 +31,7 @@ func _ready():
 		color_rect.color = Color("b6bed1")
 		label.set("theme_override_colors/font_color", Color("000214"))
 	
-	match piece_type:
+	match piece_type: # Matching the piece
 		Global.piece.KING:
 			label.text = "King"
 		Global.piece.QUEEN:
@@ -57,69 +57,10 @@ func _process(_delta):
 		this_piece_selected = false
 		Global.next_legal_moves_let.clear()
 		Global.next_legal_moves_num.clear()
-	
-	if this_piece_selected == true and Global.next_legal_moves_num == [] and Global.next_legal_moves_let == []:
-		match piece_type:
-			Global.piece.PAWN:
-				pawn_legal_moves()
 
 ## Functions #######################################################################################
 
-func knight_legal_moves(): # Getting the legal moves for the knight
-	if piece_color == Global.color.BLACK:
-		pass
-			
-	elif piece_color == Global.color.WHITE:
-		pass
-
-func pawn_legal_moves(): # Getting the legal moves for the pawn
-	if (moves_taken == 0):
-		if piece_color == Global.color.BLACK:
-			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
-			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			
-			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
-			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			
-			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
-			
-			print(str(Global.next_legal_moves_let))
-			print(str(Global.next_legal_moves_num))
-			
-		elif piece_color == Global.color.WHITE:
-			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
-			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			
-			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
-			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			
-			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
-			
-			print(str(Global.next_legal_moves_let))
-			print(str(Global.next_legal_moves_num))
-			
-	else:
-		if piece_color == Global.color.BLACK:
-			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
-			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
-			
-		elif piece_color == Global.color.WHITE:
-			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
-			Global.next_legal_moves_num.push_back(next_legal_move_num)
-			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
-
-func run_legal_moves():
-	match piece_type:
-		Global.piece.PAWN:
-			pawn_legal_moves()
-	
-
-## Signal functions ################################################################################
-
-func _on_area_2d_area_entered(area):
-	location = area.get_name()
-
+func get_location(): # Getting where the piece is located
 	match location.left(1):
 		'a':
 			location_let_array_pos = 0
@@ -155,6 +96,62 @@ func _on_area_2d_area_entered(area):
 			location_num_array_pos = 6
 		8:
 			location_num_array_pos = 7
+
+func knight_legal_moves(): # Getting the legal moves for the knight
+	if piece_color == Global.color.BLACK:
+		pass
+			
+	elif piece_color == Global.color.WHITE:
+		pass
+
+func pawn_legal_moves(): # Getting the legal moves for the pawn
+	if (moves_taken == 0):
+		if piece_color == Global.color.BLACK:
+			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
+			Global.next_legal_moves_num.push_front(next_legal_move_num)
+			
+			next_legal_move_num = Global.num_pos[location_num_array_pos - 2]
+			Global.next_legal_moves_num.push_front(next_legal_move_num)
+			
+			Global.next_legal_moves_let.push_front(Global.letter_pos[location_let_array_pos])
+			
+			print(str(Global.next_legal_moves_let))
+			print(str(Global.next_legal_moves_num))
+			
+		elif piece_color == Global.color.WHITE:
+			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
+			
+			next_legal_move_num = Global.num_pos[location_num_array_pos + 2]
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
+			
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
+			
+			print(str(Global.next_legal_moves_let))
+			print(str(Global.next_legal_moves_num))
+			
+	else:
+		if piece_color == Global.color.BLACK:
+			next_legal_move_num = Global.num_pos[location_num_array_pos - 1]
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
+			
+		elif piece_color == Global.color.WHITE:
+			next_legal_move_num = Global.num_pos[location_num_array_pos + 1]
+			Global.next_legal_moves_num.push_back(next_legal_move_num)
+			Global.next_legal_moves_let.push_back(Global.letter_pos[location_let_array_pos])
+
+func run_legal_moves():
+	match piece_type:
+		Global.piece.PAWN:
+			pawn_legal_moves()
+
+## Signal functions ################################################################################
+
+func _on_area_2d_area_entered(area):
+	location = area.get_name()
+
+	get_location()
 		
 
 func _on_button_pressed():
@@ -171,6 +168,8 @@ func _on_button_pressed():
 		this_piece_selected = true
 		
 		run_legal_moves()
+		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[0]))
+		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[1]))
 			
 	elif Global.pieces_selected_let[0] != location_let_array_pos or Global.pieces_selected_num[0] != location_num_array_pos:
 			
@@ -188,6 +187,8 @@ func _on_button_pressed():
 		this_piece_selected = true
 		
 		run_legal_moves()
+		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[0]))
+		print(str(Global.next_legal_moves_let[0]) + str(Global.next_legal_moves_num[1]))
 			
 	elif Global.pieces_selected_let[0] == location_let_array_pos and Global.pieces_selected_num[0] == location_num_array_pos:
 		

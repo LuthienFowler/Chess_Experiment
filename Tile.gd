@@ -27,19 +27,16 @@ func color_tile():
 func determine_legal_move():
 	let_is_legal = false
 	
-	for i in Global.next_legal_moves_let.size():
-		if str(location.left(1)) == str(Global.next_legal_moves_let[i]):
-			let_is_legal = true
-			break
-		else:
-			i += 1
-		
-	for i in Global.next_legal_moves_num.size():
-		if str(location.left(2)) == str(Global.next_legal_moves_num[i]) and let_is_legal:
-			Global.is_legal = true
-			break
-		else:
-			i += 1
+	if(str(location.left(1)) == str(Global.next_legal_moves_let[0])):
+		let_is_legal = true
+	
+	#for i in Global.next_legal_moves_let.size():
+		#if str(location.left(1)) == str(Global.next_legal_moves_let[i]):
+			#let_is_legal = true
+			#break
+		#else:
+			#i += 1
+		#return let_is_legal
 		
 	
 
@@ -50,4 +47,5 @@ func _on_button_pressed():
 		determine_legal_move()
 		SignalBus.move_piece.emit(location)
 		print(str(Global.is_legal) + " " + location)
+		print(let_is_legal)
 		# Send a signal to main to deal with the movement of the piece 
